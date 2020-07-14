@@ -48,8 +48,6 @@ TEXTSAVES ?= 0
 EXTERNAL_DATA ?= 0
 # Enable Discord Rich Presence
 DISCORDRPC ?= 0
-#Build with clang (Experimental)
-CLANG ?= 0
 
 # Various workarounds for weird toolchains
 
@@ -437,11 +435,6 @@ AS := $(CROSS)as
 
 ifeq ($(OSX_BUILD),1)
 AS := i686-w64-mingw32-as
-endif
-
-ifeq ($(CLANG),1)
-  CC := $(CROSS)clang
- CXX := $(CROSS)clang++
 endif
 
 ifneq ($(TARGET_WEB),1) # As in, not-web PC port
